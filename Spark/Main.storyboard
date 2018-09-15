@@ -245,7 +245,7 @@
         <!--Settings-->
         <scene sceneID="pgB-ea-T6e">
             <objects>
-                <viewController title="Settings" id="mzf-yP-gkZ" sceneMemberID="viewController">
+                <viewController title="Settings" id="mzf-yP-gkZ" customClass="SettingsViewController" customModule="Spark" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pbu-hw-qGb"/>
                         <viewControllerLayoutGuide type="bottom" id="vAu-s7-lR2"/>
@@ -264,7 +264,7 @@
         <!--Find a Spark-->
         <scene sceneID="fxJ-0O-hZ5">
             <objects>
-                <viewController title="Find a Spark" id="1Wf-0v-1BS" sceneMemberID="viewController">
+                <viewController title="Find a Spark" id="1Wf-0v-1BS" customClass="FindSparkViewController" customModule="Spark" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aup-aZ-qFB"/>
                         <viewControllerLayoutGuide type="bottom" id="D1e-UV-0uS"/>
@@ -393,7 +393,7 @@
         <!--My Sparks-->
         <scene sceneID="09F-oZ-xIk">
             <objects>
-                <viewController id="ybS-gB-6dD" sceneMemberID="viewController">
+                <viewController id="ybS-gB-6dD" customClass="MySparksViewController" customModule="Spark" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IRa-5m-cix"/>
                         <viewControllerLayoutGuide type="bottom" id="h3x-xf-S7p"/>
