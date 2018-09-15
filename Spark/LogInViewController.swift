@@ -38,7 +38,7 @@ class LogInViewController: UIViewController {
                 
                 //should call that cool cocoapod that has popup successful
                 
-                self.performSegue(withIdentifier: "goToChat", sender: self)
+                self.performSegue(withIdentifier: "goToHome", sender: self)
                 
             }
             

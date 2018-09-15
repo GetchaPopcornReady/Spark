@@ -29,7 +29,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         
         //remove back button in top bar
-        navigationItem.hidesBackButton = true  
+        //navigationItem.hidesBackButton = true  
         
         //TODO: Set yourself as the delegate and datasource here:
         messageTableView.delegate = self

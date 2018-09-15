@@ -69,9 +69,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="qIL-hP-GCy"/>
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="push" identifier="goToChat" id="RuE-fI-2yI"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1I-xB-PqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,7 +157,7 @@
                     <connections>
                         <outlet property="emailTextfield" destination="M1R-HS-xgc" id="EZN-co-Khq"/>
                         <outlet property="passwordTextfield" destination="SYb-Xx-USU" id="pWb-Ds-G8q"/>
-                        <segue destination="vXZ-lx-hvc" kind="push" identifier="goToChat" id="mOy-cb-hAN"/>
+                        <segue destination="y6u-em-4Oy" kind="push" identifier="goToHome" id="Ci4-l3-2fr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zMZ-W7-skD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -238,35 +235,75 @@
                     <connections>
                         <outlet property="emailTextfield" destination="ZWF-xv-G1L" id="A9I-P9-2rL"/>
                         <outlet property="passwordTextfield" destination="zuQ-XP-4Q7" id="FBf-fZ-iYp"/>
-                        <segue destination="vXZ-lx-hvc" kind="push" identifier="goToChat" id="rRW-Qd-PQi"/>
+                        <segue destination="y6u-em-4Oy" kind="push" identifier="goToHome" id="xZu-jU-xwY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ewD-vV-GoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="679" y="-463"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="BA9-BL-0HN">
+        <!--Settings-->
+        <scene sceneID="pgB-ea-T6e">
             <objects>
-                <viewController id="lWx-OL-Iwm" sceneMemberID="viewController">
+                <viewController title="Settings" id="mzf-yP-gkZ" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bUW-7z-uT0"/>
-                        <viewControllerLayoutGuide type="bottom" id="lSv-z7-K3y"/>
+                        <viewControllerLayoutGuide type="top" id="pbu-hw-qGb"/>
+                        <viewControllerLayoutGuide type="bottom" id="vAu-s7-lR2"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="c86-9d-GKX">
+                    <view key="view" contentMode="scaleToFill" id="tTS-fH-jMe" customClass="SettingsViewController">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="cSF-xL-gZu"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BRv-L0-lvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oNh-Pr-sM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1228" y="-839"/>
+            <point key="canvasLocation" x="1991" y="480"/>
         </scene>
-        <!--Flash Chat-->
+        <!--Find a Spark-->
+        <scene sceneID="fxJ-0O-hZ5">
+            <objects>
+                <viewController title="Find a Spark" id="1Wf-0v-1BS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aup-aZ-qFB"/>
+                        <viewControllerLayoutGuide type="bottom" id="D1e-UV-0uS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RDp-Z8-hBV" customClass="FIndSparkViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Find a Spark" id="hoR-NO-XWm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b77-bg-UrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1991" y="-305"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="qHC-ad-usK">
+            <objects>
+                <tabBarController id="y6u-em-4Oy" customClass="HomeViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Lfv-KD-BAL"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yij-wO-99y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="1Wf-0v-1BS" kind="relationship" relationship="viewControllers" id="zZ0-yd-BKw"/>
+                        <segue destination="mzf-yP-gkZ" kind="relationship" relationship="viewControllers" id="rOf-hf-aiM"/>
+                        <segue destination="ybS-gB-6dD" kind="relationship" relationship="viewControllers" id="4CD-Xv-ow0"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wXY-JB-QNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1268" y="-65"/>
+        </scene>
+        <!--My Sparks-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController storyboardIdentifier="chatVC" id="vXZ-lx-hvc" customClass="ChatViewController" customModule="Spark" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatVC" title="My Sparks" id="vXZ-lx-hvc" customClass="ChatViewController" customModule="Spark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -333,7 +370,8 @@
                             <constraint firstAttribute="trailing" secondItem="7eI-kw-TVm" secondAttribute="trailing" id="z26-fa-Hmy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Flash Chat" id="OGj-fw-WBv">
+                    <tabBarItem key="tabBarItem" title="My Sparks" id="lVx-XK-TU3"/>
+                    <navigationItem key="navigationItem" title="My Sparks" id="OGj-fw-WBv">
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="mz9-8w-6zi">
                             <connections>
                                 <action selector="logOutPressed:" destination="vXZ-lx-hvc" id="AiZ-zI-Rgo"/>
@@ -350,7 +388,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1180" y="12"/>
+            <point key="canvasLocation" x="1229" y="-1195"/>
+        </scene>
+        <!--My Sparks-->
+        <scene sceneID="09F-oZ-xIk">
+            <objects>
+                <viewController id="ybS-gB-6dD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IRa-5m-cix"/>
+                        <viewControllerLayoutGuide type="bottom" id="h3x-xf-S7p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IaL-Id-wrr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="My Sparks" id="afC-fo-e1X"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RZG-Jf-krd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842" y="-1220"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kGX-IT-aXC">
@@ -378,6 +435,6 @@
         <image name="background1" width="1800" height="1192"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rRW-Qd-PQi"/>
+        <segue reference="xZu-jU-xwY"/>
     </inferredMetricsTieBreakers>
 </document>

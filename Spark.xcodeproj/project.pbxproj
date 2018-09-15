@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		03360A95214C4B15000DD044 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03360A94214C4B15000DD044 /* GoogleService-Info.plist */; };
+		038044BB214DAE54004CCA1F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038044BA214DAE54004CCA1F /* HomeViewController.swift */; };
+		038044BD214DB1B0004CCA1F /* FindSparkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038044BC214DB1B0004CCA1F /* FindSparkViewController.swift */; };
+		038044BF214DB1CE004CCA1F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038044BE214DB1CE004CCA1F /* SettingsViewController.swift */; };
+		038044C1214DB4FB004CCA1F /* MySparksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038044C0214DB4FB004CCA1F /* MySparksViewController.swift */; };
 		15D9992707D3768F5500E7FB /* Pods_Spark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB836F74580F5B9C7BCEB809 /* Pods_Spark.framework */; };
 		6321A9C31B94EBA10053D2E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6321A9C21B94EBA10053D2E7 /* Images.xcassets */; };
 		6321A9E21B94EBE70053D2E7 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6321A9DB1B94EBE70053D2E7 /* CustomMessageCell.swift */; };
@@ -24,6 +28,10 @@
 
 /* Begin PBXFileReference section */
 		03360A94214C4B15000DD044 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		038044BA214DAE54004CCA1F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		038044BC214DB1B0004CCA1F /* FindSparkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSparkViewController.swift; sourceTree = "<group>"; };
+		038044BE214DB1CE004CCA1F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		038044C0214DB4FB004CCA1F /* MySparksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySparksViewController.swift; sourceTree = "<group>"; };
 		6321A9B61B94EBA10053D2E7 /* Spark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6321A9BA1B94EBA10053D2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6321A9C21B94EBA10053D2E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -119,6 +127,10 @@
 				63E28B2C1B9A337600FBF6E0 /* LogInViewController.swift */,
 				63E28B2D1B9A337600FBF6E0 /* RegisterViewController.swift */,
 				63E28B2E1B9A337600FBF6E0 /* WelcomeViewController.swift */,
+				038044BA214DAE54004CCA1F /* HomeViewController.swift */,
+				038044BC214DB1B0004CCA1F /* FindSparkViewController.swift */,
+				038044BE214DB1CE004CCA1F /* SettingsViewController.swift */,
+				038044C0214DB4FB004CCA1F /* MySparksViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -280,8 +292,12 @@
 				63E28B331B9A337600FBF6E0 /* WelcomeViewController.swift in Sources */,
 				63E28B251B9A335300FBF6E0 /* Message.swift in Sources */,
 				6321A9E21B94EBE70053D2E7 /* CustomMessageCell.swift in Sources */,
+				038044BF214DB1CE004CCA1F /* SettingsViewController.swift in Sources */,
 				63E28B321B9A337600FBF6E0 /* RegisterViewController.swift in Sources */,
+				038044C1214DB4FB004CCA1F /* MySparksViewController.swift in Sources */,
+				038044BB214DAE54004CCA1F /* HomeViewController.swift in Sources */,
 				63E28B311B9A337600FBF6E0 /* LogInViewController.swift in Sources */,
+				038044BD214DB1B0004CCA1F /* FindSparkViewController.swift in Sources */,
 				63E28B2F1B9A337600FBF6E0 /* AppDelegate.swift in Sources */,
 				63E28B301B9A337600FBF6E0 /* ChatViewController.swift in Sources */,
 			);
