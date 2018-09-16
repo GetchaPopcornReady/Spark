@@ -37,7 +37,10 @@ class LogInViewController: UIViewController {
                 print("Login Successful")
                 
                 //should call that cool cocoapod that has popup successful
-                
+              //  self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            //    self.navigationController?.navigationBar.backIndicatorImage = nil
+            //    self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = nil
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
                 self.performSegue(withIdentifier: "goToHome", sender: self)
                 
             }

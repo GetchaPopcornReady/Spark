@@ -14,8 +14,8 @@ class FindSparkViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true
         
+        print("made it to Find Spark file")
     }
     
     override func didReceiveMemoryWarning() {

@@ -14,7 +14,9 @@ class MySparksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true
+        print("made it to My Sparks file")
+        
+
     }
     
     override func didReceiveMemoryWarning() {
