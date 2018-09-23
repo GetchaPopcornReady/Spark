@@ -10,41 +10,52 @@ import Firebase
 
 
 class WelcomeViewController: UIViewController {
-
-    var refArtists: DatabaseReference!
    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //josh firebase practice
+    }
+    
+    func joshFirebasePractice(){
         
         //getting info from database
-            let rootRef = Database.database().reference()   //get the root of database
+        let rootRef = Database.database().reference()   //get the root of database
         
-            let usersRef = rootRef.child("Users")   //get the child reference of root called users
+        let usersRef = rootRef.child("Users")   //get the child reference of root called users
         
-            let jvetterRef = usersRef.child("jvetter")    //get the child reference of users
+        let jvetterRef = usersRef.child("jvetter")    //get the child reference of users
         
-            let jvetterChains = jvetterRef.child("myChains")
+        //check if key exists in firebase
+        usersRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if snapshot.hasChild("poopie"){
+                
+                print("true rooms exist")
+                
+            }else{
+                
+                print("false room doesn't exist")
+            }
+        })
+        //
         
-            let firstChain = jvetterChains.child("0")
+        let jvetterChains = jvetterRef.child("myChains")
         
-            let firstChainStatus = firstChain.child("status")
+        let firstChain = jvetterChains.child("0")
         
+        let firstChainStatus = firstChain.child("status")   //get the status value
+        
+    
         firstChainStatus.observe(.value, with: { snapshot in
-           // print(snapshot.value as Any)
-            let x = snapshot.value
-            print("the data value of status is: \(String(describing: x))")
+            print(snapshot.value as Any)
         })
         
         //writing info to firebase
         
-    //how to add a new user to firebase
+        //how to add a new user to firebase
         usersRef.child("AaronDonald99").child("myChains").child("0").setValue(["status": "completed", "timeleft": 0])
         
-    //
-        
-    
+
     }
 
     override func didReceiveMemoryWarning() {

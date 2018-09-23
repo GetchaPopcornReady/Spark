@@ -7,44 +7,81 @@
 //
 
 import UIKit
+import Firebase
 
-class MySparksViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
+class MySparksViewController: UITableViewController {
 
-    let list = ["hi", "hfgh","dghdh","dfhgdgh"]
+    var rootRef : DatabaseReference!
+    var usersRef : DatabaseReference!
+    var refHandle: UInt!
+    var chainList = [ChainItem]()
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return(list.count)
-    }
-    
-     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = list[indexPath.row]
-        
-        return(cell)
-    }
-    
+    let cellId = "cellId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("my sparks loaded")
+        
+ 
+        
+        print("made it to mySparksViewControllerrr")
+        
+        rootRef = Database.database().reference()
+        
+        usersRef = rootRef.child("Users")   //get the child reference of root called users
+        
+        
+        fetchChains()
+        
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func fetchChains(){
+        print("here")
+        refHandle = rootRef.child("Users").observe(.childAdded, with: { (snapshot) in
+            if let dictionary = snapshot.value as?  [String : Any]{
+                
+                print("printing dictionary below...")
+                print(dictionary)
+                
+                let chainItem = ChainItem(dictionary: dictionary)
+                
+               // chainItem.setValuesForKeys(dictionary)
+                self.chainList.append(chainItem)
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+    
+            }
+            
+        })
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //the number of cells inside the table view
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         print("count")
+        return chainList.count
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       // let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
+        
+        print("cell")
+        
+        
+        //try to loop through chain list and get info out
+        //print(chainList)
+        
+       let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        
+        cell.textLabel?.text = chainList[indexPath.row].status
+        //set cell contents here
+        
+        return cell
+    }
+    
+    
+    
 }
+
+
