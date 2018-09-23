@@ -13,7 +13,9 @@ class MySparksViewController: UITableViewController {
 
     var rootRef : DatabaseReference!
     var usersRef : DatabaseReference!
+    var specificUserRef : DatabaseReference!
     var refHandle: UInt!
+    var handle: DatabaseHandle!
     var chainList = [ChainItem]()
     
     let cellId = "cellId"
@@ -21,25 +23,25 @@ class MySparksViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
- 
-        
         print("made it to mySparksViewControllerrr")
         
         rootRef = Database.database().reference()
         
         usersRef = rootRef.child("Users")   //get the child reference of root called users
         
-        let jvetterRef = usersRef.child("jvetter")    //get the child reference of users
+        specificUserRef = usersRef.child("josh")    //get the child reference of users
         
-        let jvetterChains = jvetterRef.child("myChains")
+        let x = specificUserRef.child("status")
+//        let jvetterChains = jvetterRef.child("myChains")
+//
+//        let firstChain = jvetterChains.child("0")
+//
+//        let firstChainStatus = firstChain.child("status")   //get the status value
         
-        let firstChain = jvetterChains.child("0")
         
-        let firstChainStatus = firstChain.child("status")   //get the status value
-        
-        
-        firstChainStatus.observe(.value, with: { snapshot in
-            print(snapshot.value as Any)
+        x.observe(.value, with: { snapshot in
+            let z = snapshot.value as Any
+            print("retrieved manually status was: \(z)")
         })
         
         
@@ -51,7 +53,13 @@ class MySparksViewController: UITableViewController {
     func fetchChains(){
         print("here")
         
-        refHandle = rootRef.child("Users").observe(.childAdded, with: { (snapshot) in
+        handle = rootRef.child("Users").child("josh").observe(.value, with: { (snapshot) in
+            
+            //theres 2 different ways to get data from firebase
+            //get 1 value (this is easier to manipulate)
+            //get the entire list (and then you have to do some parsing), but sometimes this is better actually...less DB calls
+            
+//        handle = rootRef.child("Users").observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as?  [String : Any]{
                 
                 print("printing dictionary below...")
@@ -89,7 +97,7 @@ class MySparksViewController: UITableViewController {
        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
         cell.textLabel?.text = chainList[indexPath.row].status
-        print(chainList[indexPath.row].status)
+        print(chainList[indexPath.row].status ?? "default value")
         //set cell contents here
         
         return cell
