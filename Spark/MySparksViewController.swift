@@ -29,6 +29,19 @@ class MySparksViewController: UITableViewController {
         
         usersRef = rootRef.child("Users")   //get the child reference of root called users
         
+        let jvetterRef = usersRef.child("jvetter")    //get the child reference of users
+        
+        let jvetterChains = jvetterRef.child("myChains")
+        
+        let firstChain = jvetterChains.child("0")
+        
+        let firstChainStatus = firstChain.child("status")   //get the status value
+        
+        
+        firstChainStatus.observe(.value, with: { snapshot in
+            print(snapshot.value as Any)
+        })
+        
         
         fetchChains()
         
@@ -37,6 +50,7 @@ class MySparksViewController: UITableViewController {
 
     func fetchChains(){
         print("here")
+        
         refHandle = rootRef.child("Users").observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as?  [String : Any]{
                 
@@ -75,6 +89,7 @@ class MySparksViewController: UITableViewController {
        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
         cell.textLabel?.text = chainList[indexPath.row].status
+        print(chainList[indexPath.row].status)
         //set cell contents here
         
         return cell

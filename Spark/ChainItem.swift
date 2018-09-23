@@ -16,7 +16,7 @@ class ChainItem: NSObject{
     
     init(dictionary: [String:Any]){
         super.init()
-        status = dictionary["myChains"] as? String
+        status = dictionary["status"] as? String
         timeleft = dictionary["timeleft"] as? String
         
     }
