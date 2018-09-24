@@ -38,6 +38,11 @@ class MySparksViewController: UITableViewController {
 //
 //        let firstChainStatus = firstChain.child("status")   //get the status value
         
+        let userID = Auth.auth().currentUser?.uid
+        
+        //printing the current users ID
+        print("printing current user from firebase: \(userID)")
+        
         
         x.observe(.value, with: { snapshot in
             let z = snapshot.value as Any
@@ -51,13 +56,26 @@ class MySparksViewController: UITableViewController {
     }
 
     func fetchChains(){
-        print("here")
         
-        handle = rootRef.child("Users").child("josh").observe(.value, with: { (snapshot) in
+     //   while(count < 3){   using the while and counting does actually work, but you have no way of telling the loop when to stop as it skips still
+        
+        //this will not enter if there are no children that have values!
+        handle = rootRef.child("Users").child("josh").child("chains").observe(.value, with: { (snapshot) in
+            print("entered")
+              //we will enter this block if another chain exists (i think)
+            
+             print(snapshot.childrenCount)
+            
+            for rest in snapshot.children.allObjects as! [DataSnapshot] {
+                print("children value: \(String(describing: rest.value))")
+                
+                //can we get the status from each of these and add it to the array that will populate the data cells?? try line 81
+            }
             
             //theres 2 different ways to get data from firebase
             //get 1 value (this is easier to manipulate)
-            //get the entire list (and then you have to do some parsing), but sometimes this is better actually...less DB calls
+            //get the entire list (and then you have to do some parsing), but sometimes this is better actually...less DB calls, this way is doing
+            //1 value and i will have multiple, so need to figure out how to get the multiple...or put it in a loop
             
 //        handle = rootRef.child("Users").observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as?  [String : Any]{
@@ -77,19 +95,16 @@ class MySparksViewController: UITableViewController {
             }
             
         })
+        
     }
     
     //the number of cells inside the table view
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         print("count")
         return chainList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        // let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
-        
-        print("cell")
-        
         
         //try to loop through chain list and get info out
         //print(chainList)
