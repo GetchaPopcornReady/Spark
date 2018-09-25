@@ -68,8 +68,31 @@ class MySparksViewController: UITableViewController {
             
             for rest in snapshot.children.allObjects as! [DataSnapshot] {
                 print("children value: \(String(describing: rest.value))")
-                
                 //can we get the status from each of these and add it to the array that will populate the data cells?? try line 81
+                
+                
+//                if let dictionary = rest.value as? [String: Any] {
+//                    if let number = dictionary["someKey"] as? Double {
+//                        // access individual value in dictionary
+//                    }
+//                }
+                
+                if let dictionary = rest.value as?  [String : Any]{
+                    
+                    print("printing dictionary below...")
+                    print(dictionary)
+                    
+                    let chainItem = ChainItem(dictionary: dictionary)
+                    
+                    // chainItem.setValuesForKeys(dictionary)
+                    self.chainList.append(chainItem)
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                }
+                
             }
             
             //theres 2 different ways to get data from firebase
