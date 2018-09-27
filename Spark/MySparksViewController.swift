@@ -67,7 +67,7 @@ class MySparksViewController: UITableViewController {
              print(snapshot.childrenCount)
             
             for rest in snapshot.children.allObjects as! [DataSnapshot] {
-                print("children value: \(String(describing: rest.value))")
+              //  print("children value: \(String(describing: rest.value))")
                 //can we get the status from each of these and add it to the array that will populate the data cells?? try line 81
                 
                 
@@ -81,9 +81,9 @@ class MySparksViewController: UITableViewController {
                     
                     print("printing dictionary below...")
                     print(dictionary)
-                    
+                    print("after dictionary")
                     let chainItem = ChainItem(dictionary: dictionary)
-                    
+                    print(chainItem.timeleft ?? "default")
                     // chainItem.setValuesForKeys(dictionary)
                     self.chainList.append(chainItem)
                     
@@ -133,9 +133,11 @@ class MySparksViewController: UITableViewController {
         //print(chainList)
         
        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        
-        cell.textLabel?.text = chainList[indexPath.row].status
+    
+        let fullCellLabel = chainList[indexPath.row].status! + " | \(chainList[indexPath.row].timeleft!)"//there will be an error if no status or time was created in firebase
+        cell.textLabel?.text = fullCellLabel
         print(chainList[indexPath.row].status ?? "default value")
+        print(chainList[indexPath.row].timeleft ?? "default value")
         //set cell contents here
         
         return cell

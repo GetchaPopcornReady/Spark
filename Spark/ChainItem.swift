@@ -10,14 +10,15 @@ import UIKit
 class ChainItem: NSObject{
     
     var status: String?
-    var timeleft: String?
+    var timeleft: Int?
     
 
     
     init(dictionary: [String:Any]){
         super.init()
         status = dictionary["status"] as? String
-        timeleft = dictionary["timeleft"] as? String
+        timeleft = dictionary["timeleft"] as? Int
+
         
     }
     
