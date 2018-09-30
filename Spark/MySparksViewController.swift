@@ -17,7 +17,7 @@ class MySparksViewController: UITableViewController {
     var refHandle: UInt!
     var handle: DatabaseHandle!
     var chainList = [ChainItem]()
-    
+    let userID = Auth.auth().currentUser?.uid
     let cellId = "cellId"
     
     override func viewDidLoad() {
@@ -38,7 +38,7 @@ class MySparksViewController: UITableViewController {
 //
 //        let firstChainStatus = firstChain.child("status")   //get the status value
         
-        let userID = Auth.auth().currentUser?.uid
+        
         
         //printing the current users ID
         print("printing current user from firebase: \(userID)")
@@ -60,7 +60,7 @@ class MySparksViewController: UITableViewController {
      //   while(count < 3){   using the while and counting does actually work, but you have no way of telling the loop when to stop as it skips still
         
         //this will not enter if there are no children that have values!
-        handle = rootRef.child("Users").child("josh").child("chains").observe(.value, with: { (snapshot) in
+        handle = rootRef.child("Users").child(userID!).child("chains").observe(.value, with: { (snapshot) in
             print("entered")
               //we will enter this block if another chain exists (i think)
             
