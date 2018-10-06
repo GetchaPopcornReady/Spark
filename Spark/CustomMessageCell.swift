@@ -10,11 +10,10 @@ import UIKit
 
 class CustomMessageCell: UITableViewCell {
 
-
-    @IBOutlet var messageBackground: UIView!
-    @IBOutlet var avatarImageView: UIImageView!
-    @IBOutlet var messageBody: UILabel!
-    @IBOutlet var senderUsername: UILabel!
+    @IBOutlet weak var statusImage: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var timeRemaining: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -132,10 +132,23 @@ class MySparksViewController: UITableViewController {
         //try to loop through chain list and get info out
         //print(chainList)
         
-       let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+       let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CustomMessageCell
     
         let fullCellLabel = chainList[indexPath.row].status! + " | \(chainList[indexPath.row].timeleft!)"//there will be an error if no status or time was created in firebase
-        cell.textLabel?.text = fullCellLabel
+        
+       // cell.textLabel?.text = fullCellLabel
+        cell.title?.text = fullCellLabel
+        cell.timeRemaining?.text = "time remaining: \(String(describing: chainList[indexPath.row].timeleft))"
+        
+        cell.statusImage.image = UIImage(named: "success.png")
+        //were gunna have to add title to the chainitem object
+        
+        //put correct image
+        if(chainList[indexPath.row].status == "Complete"){
+            print("made it here!!")
+            cell.statusImage.image = UIImage(named: "success")
+        }
+        
         print(chainList[indexPath.row].status ?? "default value")
         print(chainList[indexPath.row].timeleft ?? "default value")
         //set cell contents here

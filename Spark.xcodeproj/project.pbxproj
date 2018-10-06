@@ -21,7 +21,6 @@
 		63E28B251B9A335300FBF6E0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28B241B9A335300FBF6E0 /* Message.swift */; };
 		63E28B291B9A336600FBF6E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E28B281B9A336600FBF6E0 /* Main.storyboard */; };
 		63E28B2F1B9A337600FBF6E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28B2A1B9A337600FBF6E0 /* AppDelegate.swift */; };
-		63E28B301B9A337600FBF6E0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28B2B1B9A337600FBF6E0 /* ChatViewController.swift */; };
 		63E28B311B9A337600FBF6E0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28B2C1B9A337600FBF6E0 /* LogInViewController.swift */; };
 		63E28B321B9A337600FBF6E0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28B2D1B9A337600FBF6E0 /* RegisterViewController.swift */; };
 		63E28B331B9A337600FBF6E0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28B2E1B9A337600FBF6E0 /* WelcomeViewController.swift */; };
@@ -44,7 +43,6 @@
 		63E28B241B9A335300FBF6E0 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		63E28B281B9A336600FBF6E0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		63E28B2A1B9A337600FBF6E0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63E28B2B1B9A337600FBF6E0 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		63E28B2C1B9A337600FBF6E0 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		63E28B2D1B9A337600FBF6E0 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		63E28B2E1B9A337600FBF6E0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				63E28B2A1B9A337600FBF6E0 /* AppDelegate.swift */,
-				63E28B2B1B9A337600FBF6E0 /* ChatViewController.swift */,
 				63E28B2C1B9A337600FBF6E0 /* LogInViewController.swift */,
 				63E28B2D1B9A337600FBF6E0 /* RegisterViewController.swift */,
 				63E28B2E1B9A337600FBF6E0 /* WelcomeViewController.swift */,
@@ -306,7 +303,6 @@
 				03FA8BBC215696AF001F6CC7 /* ChainItem.swift in Sources */,
 				038044BD214DB1B0004CCA1F /* FindSparkViewController.swift in Sources */,
 				63E28B2F1B9A337600FBF6E0 /* AppDelegate.swift in Sources */,
-				63E28B301B9A337600FBF6E0 /* ChatViewController.swift in Sources */,
 				03FA8BB6214EFC96001F6CC7 /* CreateSparkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
